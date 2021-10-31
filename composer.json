@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "draganus/laravel-notification-preferences",
+    "description": "Users can: Enable/disable notifications for email address, push notifications, SMS, slack..",
     "keywords": [
-        ":vendor_name",
+        "draganus",
         "laravel",
-        ":package_slug"
+        "laravel-notification-preferences"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/draganus/laravel-notification-preferences",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Dragan Usic",
+            "email": "usic.d.dragan@gmail.com",
             "role": "Developer"
         }
     ],
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "draganus\\LaravelNotificationPreferences\\": "src",
+            "draganus\\LaravelNotificationPreferences\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "draganus\\LaravelNotificationPreferences\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -49,10 +49,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "draganus\\LaravelNotificationPreferences\\LaravelNotificationPreferencesServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "LaravelNotificationPreferences": "draganus\\LaravelNotificationPreferences\\LaravelNotificationPreferencesFacade"
             }
         }
     },
