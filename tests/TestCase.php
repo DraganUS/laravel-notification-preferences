@@ -2,9 +2,9 @@
 
 namespace draganus\LaravelNotificationPreferences\Tests;
 
+use draganus\LaravelNotificationPreferences\LaravelNotificationPreferencesServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use draganus\LaravelNotificationPreferences\LaravelNotificationPreferencesServiceProvider;
 
 class TestCase extends Orchestra
 {

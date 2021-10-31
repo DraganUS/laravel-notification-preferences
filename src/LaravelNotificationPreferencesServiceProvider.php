@@ -2,9 +2,9 @@
 
 namespace draganus\LaravelNotificationPreferences;
 
+use draganus\LaravelNotificationPreferences\Commands\LaravelNotificationPreferencesCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use draganus\LaravelNotificationPreferences\Commands\LaravelNotificationPreferencesCommand;
 
 class LaravelNotificationPreferencesServiceProvider extends PackageServiceProvider
 {
