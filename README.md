@@ -36,7 +36,7 @@ composer require draganus/laravel-notification-preferences
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="draganus\LaravelNotificationPreferences\LaravelNotificationPreferencesServiceProvider" --tag="laravel-notification-preferences-migrations"
+php artisan vendor:publish --provider="draganus\LaravelNotificationPreferences\LaravelNotificationPreferencesServiceProvider" --tag="add-notification-preferences-to-users-table"
 php artisan migrate
 ```
 

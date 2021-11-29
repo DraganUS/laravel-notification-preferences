@@ -1,5 +1,10 @@
 <?php
 
 use draganus\LaravelNotificationPreferences\Tests\TestCase;
+use Illuminate\Support\Facades\Route;
 
-uses(TestCase::class)->in(__DIR__);
+uses(TestCase::class)
+    ->beforeEach(function (){
+        Route::notificationPreference();
+    })
+    ->in(__DIR__);

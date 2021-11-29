@@ -2,6 +2,8 @@
 
 namespace draganus\LaravelNotificationPreferences;
 
+use Illuminate\Support\Facades\Route;
+use draganus\LaravelNotificationPreferences\Http\Controller\PreferenceController;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use draganus\LaravelNotificationPreferences\Commands\LaravelNotificationPreferencesCommand;
@@ -19,7 +21,16 @@ class LaravelNotificationPreferencesServiceProvider extends PackageServiceProvid
             ->name('laravel-notification-preferences')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel-notification-preferences_table')
-            ->hasCommand(LaravelNotificationPreferencesCommand::class);
+            ->hasMigration('add-notification-preferences-to-users-table');
+    }
+
+    public function registeringPackage()
+    {
+        Route::macro('notificationPreference', function (string $baseUrl = 'notification/preference'){
+            Route::prefix($baseUrl)->group(function (){
+                Route::get('/', [PreferenceController::class, 'index']);
+                Route::post('/', [PreferenceController::class, 'index']);
+            });
+        });
     }
 }
