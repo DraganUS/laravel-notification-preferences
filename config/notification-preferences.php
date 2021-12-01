@@ -1,6 +1,5 @@
 <?php
 return [
-
     /*
      * Set the defoult notification's delivery channels
      */

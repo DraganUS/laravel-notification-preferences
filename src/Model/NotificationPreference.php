@@ -11,18 +11,23 @@ class NotificationPreference extends Model
     use HasFactory;
     public $guarded = [];
     public $timestamps = false;
+
     protected $casts = [
         'notification_preferences' => 'array'
     ];
 
-    public function check($data)
+    public function check($user, $notificationType = null)
     {
-        $preferences = json_decode($data->notification_preferences);
-
-        if (!isset($preferences) && empty($preferences)){
-            return config('notification-preferences.notify_channels');
+        $data = NotificationPreference::where('user_id', $user->id)->where('type', $notificationType)->first();
+        if($data){
+            $preferences = $data->notification_preferences;
+            if (!isset($preferences) && empty($preferences)){
+                return config('notification-preferences.notify_channels');
+            } else{
+                return $preferences;
+            }
         } else{
-            return $preferences;
+            return config('notification-preferences.notify_channels');
         }
     }
 }

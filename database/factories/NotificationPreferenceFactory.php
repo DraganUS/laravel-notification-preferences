@@ -13,7 +13,9 @@ class NotificationPreferenceFactory extends Factory
     public function definition()
     {
         return [
-            'notification_preferences' => ["test"],
+            'user_id' => 1,
+            "type"=> "test",
+            "notification_preferences" => ['mail', 'database']
         ];
     }
 }

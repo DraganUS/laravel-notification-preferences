@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Route;
 use draganus\LaravelNotificationPreferences\Http\Controller\PreferenceController;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use draganus\LaravelNotificationPreferences\Commands\LaravelNotificationPreferencesCommand;
 
 class LaravelNotificationPreferencesServiceProvider extends PackageServiceProvider
 {
@@ -21,7 +20,7 @@ class LaravelNotificationPreferencesServiceProvider extends PackageServiceProvid
             ->name('laravel-notification-preferences')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('add-notification-preferences-to-users-table');
+            ->hasMigration('create_notification_preferences_table');
     }
 
     public function registeringPackage()
