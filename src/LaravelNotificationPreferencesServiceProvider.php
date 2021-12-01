@@ -2,8 +2,8 @@
 
 namespace draganus\LaravelNotificationPreferences;
 
-use Illuminate\Support\Facades\Route;
 use draganus\LaravelNotificationPreferences\Http\Controller\PreferenceController;
+use Illuminate\Support\Facades\Route;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -25,8 +25,8 @@ class LaravelNotificationPreferencesServiceProvider extends PackageServiceProvid
 
     public function registeringPackage()
     {
-        Route::macro('notificationPreference', function (string $baseUrl = 'notification/preference'){
-            Route::prefix($baseUrl)->group(function (){
+        Route::macro('notificationPreference', function (string $baseUrl = 'notification/preference') {
+            Route::prefix($baseUrl)->group(function () {
                 Route::get('/', [PreferenceController::class, 'index']);
                 Route::post('/', [PreferenceController::class, 'index']);
             });

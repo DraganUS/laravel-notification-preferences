@@ -2,7 +2,7 @@
 
 use draganus\LaravelNotificationPreferences\Model\NotificationPreference;
 
-it('can create a model', function (){
+it('can create a model', function () {
 
     /* @var NotificationPreference $notifctionS */
     $notifctionS = NotificationPreference::factory()->create();

@@ -4,7 +4,6 @@ namespace draganus\LaravelNotificationPreferences\Tests;
 
 use draganus\LaravelNotificationPreferences\LaravelNotificationPreferencesServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Route;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -32,6 +31,5 @@ class TestCase extends Orchestra
 
         $migration = include __DIR__ . '/../database/migrations/create_notification_preferences_table.php.stub';
         $migration->up();
-
     }
 }
