@@ -21,13 +21,8 @@ composer require draganus/laravel-notification-preferences
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="draganus\LaravelNotificationPreferences\LaravelNotificationPreferencesServiceProvider" --tag="add-notification-preferences-to-users-table"
+php artisan vendor:publish --provider="draganus\LaravelNotificationPreferences\LaravelNotificationPreferencesServiceProvider"
 php artisan migrate
-```
-
-You can publish the config file with:
-```bash
-php artisan vendor:publish --provider="draganus\LaravelNotificationPreferences\LaravelNotificationPreferencesServiceProvider" --tag="laravel-notification-preferences-config"
 ```
 
 This is the contents of the published config file:
@@ -42,10 +37,13 @@ return [
 ```
 
 ## Usage
-
+in your Notification class replace via method 
 ```php
-$laravel-notification-preferences = new draganus\LaravelNotificationPreferences();
-echo $laravel-notification-preferences->echoPhrase('Hello, draganus!');
+public function via($notifiable) 
+{
+    $notificationPreference = new NotificationPreference();
+    return $notificationPreference->check($notifiable, self::class);
+}
 ```
 
 ## Testing
