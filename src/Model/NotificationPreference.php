@@ -33,14 +33,15 @@ class NotificationPreference extends Model
     public function allNotificationSettings($user = null)
     {
         $arr = [];
-        foreach (config('notification-preferences.notify_type') as $notifyType){
+        foreach (config('notification-preferences.notify_type') as $notifyType) {
             $arr[$notifyType] = config('notification-preferences.notify_channels');
         }
+
         return $arr;
-        if (!empty($user)){
+        if (! empty($user)) {
             $data = NotificationPreference::where('user_id', $user->id)->whereIn('type',  config('notification-preferences.notify_type'))->pluck('notification_preferences', 'type')->all();
+
             return $data;
         }
-
     }
 }
